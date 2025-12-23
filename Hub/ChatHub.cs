@@ -9,6 +9,7 @@ public class ChatHub : Hub<OnChatMessage>
         return base.OnConnectedAsync();
     }
 
+
     
     public async Task SendMessage(string user, string message)
         => await Clients.All.ReceiveChatMessage(user, message);
